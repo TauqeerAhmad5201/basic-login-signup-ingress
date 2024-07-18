@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-signup
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: login-signup
+  template:
+    metadata:
+      labels:
+        app: login-signup
+    spec:
+      containers:
+      - name: login-signup
+        image: tauqeerops/login-signup:latest
+        ports:
+        - containerPort: 3000
